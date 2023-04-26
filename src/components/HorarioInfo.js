@@ -1,5 +1,5 @@
-//Este componente será responsável por exibir informações gerais e
-//estatísticas sobre um horário escolhido pelo usuário.
+// Este componente será responsável por exibir informações gerais e
+// estatísticas sobre um horário escolhido pelo usuário.
 
 import React from 'react';
 
