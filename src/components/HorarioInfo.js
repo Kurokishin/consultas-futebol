@@ -1,13 +1,21 @@
 //Este componente será responsável por exibir informações gerais e
 //estatísticas sobre um horário escolhido pelo usuário.
 
-function HorarioInfo() {
-    return (
-      <div>
-        <h1>Bem-vindo à aplicação de estatísticas esportivas!</h1>
-      </div>
-    );
-  }
-  
-  export default HorarioInfo;
+import React from 'react';
+
+function HorarioInfo({ horario }) {
+  return (
+    <div>
+      <h2>Informações do horário selecionado</h2>
+      <p>Nome: {horario.nome}</p>
+      <p>Esporte: {horario.esporte}</p>
+      <p>Local: {horario.local}</p>
+      <p>Horário de início: {horario.horarioInicio}</p>
+      <p>Horário de término: {horario.horarioTermino}</p>
+    </div>
+  );
+}
+
+export default HorarioInfo;
+
   

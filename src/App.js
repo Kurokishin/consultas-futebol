@@ -3,6 +3,9 @@ import HorarioInfo from "./components/HorarioInfo";
 import React from "react";
 import JogadorInfo from "./components/JogadorInfo";
 import JogosData from "./components/JogosData";
+import React, { useState } from 'react';
+import axios from 'axios';
+import HorarioInfo from
 
 // Este código criará uma rota para os componentes "HorarioInfo, JogadorID e JogosData" quando a 
 // URL /horario/:horarioId for acessada. O parâmetro :horarioId é um parâmetro de
