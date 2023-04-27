@@ -43,31 +43,25 @@ function App() {
   const selecionarHorario = () => {
     setHorarioSelecionado(horario);
   };
+
+  const selecionarJogador = () => {
+    setJogadorSelecionado(jogador);
+  };
+
   // Aqui criamos um botão para chamar a função 'selecionarHorario' e atualizar quando ele não for nulo.
   return (
     <div>
       <h1>Minha aplicação de estatísticas esportivas</h1>
       <button onClick={selecionarHorario}>Selecionar horário</button>
       {horarioSelecionado && <HorarioInfo horario={horarioSelecionado} />}
+      <br />
+      <button onClick={selecionarJogador}>Selecionar jogador</button>
+      {jogadorSelecionado && <JogadorInfo jogador={jogadorSelecionado} />}
+      <br />
+      <button onClick={getJogos}>Buscar jogos</button>
+      {jogos.length > 0 && <JogosData jogos={jogos} />}
     </div>
   );
-
-  // Codigo de teste deixei comentado por enquanto...
-  // return (
-  //   <Router>
-  //     <Switch>
-  //       <Route path="/Horario/:HorarioId">
-  //         <HorarioInfo/>
-  //       </Route>
-  //       <Route path="/Jogador/:JogadorID">
-  //         <JogadorInfo/>
-  //       </Route>
-  //       <Route path="/Jogos/:date">
-  //         <JogosData/>
-  //       </Route>
-  //     </Switch>
-  //   </Router>
-  // );
 }
 
 export default App;
