@@ -6,6 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install react-scripts --save`
+
+Execute esse comando no seu terminal "CMD" para instalar todos os componentes necessarios para utilização dos arquivos React.
+Se o pacote já estiver instalado, verifique se a pasta node_modules/.bin está presente no diretório do projeto. Se estiver ausente, pode ser necessário excluir a pasta node_modules e reinstalar todas as dependências do projeto executando o comando:
+### `rm -rf node_modules`
+### `npm install`
+Após garantir que o react-scripts está instalado e a pasta node_modules/.bin está presente, tente executar novamente o comando:
+### `npm run build.`
+
 ### `npm start`
 
 Runs the app in the development mode.\
