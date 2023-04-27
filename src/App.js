@@ -3,6 +3,7 @@ import JogadorInfo from "./components/JogadorInfo";
 import JogosData from "./components/JogosData";
 import React, { useState } from 'react';
 import axios from 'axios';
+import { getJogos } from './api.js';
 
 // Este código criará uma rota para os componentes "HorarioInfo, JogadorID e JogosData"
 
@@ -47,11 +48,30 @@ function App() {
   return (
     <div>
       <h1>Minha aplicação de estatísticas esportivas</h1>
-      <button onClick={getHorario}>Selecionar horário</button>
-      {horarioSelecionado && <HorarioInfo horario={horarioSelecionado} />}
+
+      <button onClick={getHorario}>Buscar horário</button>
+      {horario && (
+        <div>
+          <h2>Horário:</h2>
+          <p>{horario.nome}</p>
+          <p>{horario.esporte}</p>
+          <p>{horario.local}</p>
+          <p>{horario.horarioInicio} - {horario.horarioTermino}</p>
+        </div>
+      )}
+
       <br />
-      <button onClick={getJogador}>Selecionar jogador</button>
-      {jogadorSelecionado && <JogadorInfo jogador={jogadorSelecionado} />}
+      <button onClick={getJogador}>Buscar jogador</button>
+      {jogador && (
+        <div>
+          <h2>Jogador:</h2>
+          <p>{jogador.nome}</p>
+          <p>{jogador.idade} anos</p>
+          <p>Posição: {jogador.posicao}</p>
+          <p>Time: {jogador.time}</p>
+        </div>
+      )}
+
       <br />
       <button onClick={getJogos}>Buscar jogos</button>
       {jogos.length > 0 && <JogosData jogos={jogos} />}
