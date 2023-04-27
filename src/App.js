@@ -1,20 +1,19 @@
-import HorarioInfo from "./components/HorarioInfo";
-import JogadorInfo from "./components/JogadorInfo";
-import JogosData from "./components/JogosData";
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getJogos } from './api.js';
-
-// Este código criará uma rota para os componentes "HorarioInfo, JogadorID e JogosData"
+import { fetchTeamInfo, fetchPlayerInfo, fetchFixturesByDate } from "./api";
+import JogadorInfo from "./components/JogadorInfo";
+import HorarioInfo from "./components/HorarioInfo";
+import JogosData from "./components/JogosData";
 
 function App() {
-  // Usando o 'HorarioInfo' importado, definimos o 'horarioSelecionado' com valor 'null' usando o 'UseState'.
-  const [horarioSelecionado, setHorarioSelecionado] = useState(null);
-  const [jogadorSelecionado, setJogadorSelecionado] = useState(null);
+  const [horario, setHorario] = useState(null);
+  const [jogador, setJogador] = useState(null);
   const [jogos, setJogos] = useState([]);
+  const [playerInfo, setPlayerInfo] = useState(null);
+  const [fixtures, setFixtures] = useState([]);
 
-  // Definimos um objeto 'horario' com algumas informações de exemplo para testar.
-  const getHorario = async () => {
+
+  const buscarHorario = async () => {
     try {
       const response = await axios.get('https://www.api-football.com/horario');
       setHorario(response.data);
@@ -23,8 +22,7 @@ function App() {
     }
   };
 
-  // Definimos um objeto 'jogador' com algumas informações.
-  const getJogador = async () => {
+  const buscarJogador = async () => {
     try {
       const response = await axios.get('https://www.api-football.com/jogador');
       setJogador(response.data);
@@ -33,50 +31,58 @@ function App() {
     }
   };
 
-  // Definimos o objeto getJogos para buscar diretamente da api via HTTP.
-  const getJogos = async () => { 
+  const buscarJogos = async () => {
     try {
-      const response = await axios.get('https://www.api-football.com/');
+      const response = await fetchFixturesByDate('2023-04-27');
       setJogos(response.data);
     } catch (error) {
       console.error(error);
     }
   };
 
-  // Aqui criamos um botão para chamar as funções de selecionar horario e jogador e o busca jogos
-  // Ao clicar no botão eles devem ser atualizados, caso não sejam nulos.
+  const buscarJogadorPorId = async (playerId) => {
+    try {
+      const response = await fetchPlayerInfo(playerId);
+      setPlayerInfo(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const buscarJogosPorTime = async (teamId) => {
+    try {
+      const response = await fetchFixturesByDate('2023-04-27', teamId);
+      setFixtures(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
-      <h1>Minha aplicação de estatísticas esportivas</h1>
-
-      <button onClick={getHorario}>Buscar horário</button>
+      <h1>Aplicação de estatísticas esportivas</h1>
+  
+      <button onClick={buscarHorario}>Buscar horário</button>
       {horario && (
         <div>
           <h2>Horário:</h2>
-          <p>{horario.nome}</p>
-          <p>{horario.esporte}</p>
-          <p>{horario.local}</p>
-          <p>{horario.horarioInicio} - {horario.horarioTermino}</p>
+          <HorarioInfo horario={horario} />
         </div>
       )}
-
+  
       <br />
-      <button onClick={getJogador}>Buscar jogador</button>
+      <button onClick={buscarJogador}>Buscar jogador</button>
       {jogador && (
         <div>
           <h2>Jogador:</h2>
-          <p>{jogador.nome}</p>
-          <p>{jogador.idade} anos</p>
-          <p>Posição: {jogador.posicao}</p>
-          <p>Time: {jogador.time}</p>
+          <JogadorInfo jogador={jogador} />
         </div>
       )}
-
+  
       <br />
-      <button onClick={getJogos}>Buscar jogos</button>
+      <button onClick={buscarJogos}>Buscar jogos</button>
       {jogos.length > 0 && <JogosData jogos={jogos} />}
     </div>
   );
-}
-
-export default App;
+      }
+      export default App;
