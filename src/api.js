@@ -10,6 +10,6 @@ export const getJogador = (jogadorId) => {
   return axios.get(`${API_BASE_URL}/jogador/${jogadorId}`);
 };
 
-export const getJogosData = (jogosDataID) => {
-  return axios.get(`${API_BASE_URL}/jogosData/${jogosDataID}`);
+export const getJogosData = (date) => {
+  return axios.get(`${API_BASE_URL}/jogosData/${date}`);
 };
