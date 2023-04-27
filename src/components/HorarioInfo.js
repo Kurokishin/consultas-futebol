@@ -18,4 +18,5 @@ function HorarioInfo({ horario }) {
 
 export default HorarioInfo;
 
-  
+// Agora já podemos importar o componente HorarioInfo no nosso componente App.js
+// e exibi-lo na página quando o usuário escolher um horário.
