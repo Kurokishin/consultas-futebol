@@ -1,5 +1,3 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import React from "react";
 import HorarioInfo from "./components/HorarioInfo";
 import JogadorInfo from "./components/JogadorInfo";
 import JogosData from "./components/JogosData";
@@ -12,7 +10,11 @@ import axios from 'axios';
 // O mesmo ocorre com as URLs dos outros parametros informados (JogadorID e JogosData).
 
 function App() {
-  const [horarioSelecionado, setHorarioSelecionado] = useState(null); // Usando o 'HorarioInfo' importado, definimos o 'horarioSelecionado' com valor 'null' usando o 'UseState'.
+  // Usando o 'HorarioInfo' importado, definimos o 'horarioSelecionado' com valor 'null' usando o 'UseState'.
+  const [horarioSelecionado, setHorarioSelecionado] = useState(null);
+  const [jogadorSelecionado, setJogadorSelecionado] = useState(null);
+  const [jogos, setJogos] = useState([]);
+
   const horario = { // Definimos um objeto 'horario' com algumas informações de exemplo para testar.
     nome: 'Horário 1',
     esporte: 'Futebol',
@@ -20,6 +22,23 @@ function App() {
     horarioInicio: '14:00',
     horarioTermino: '16:00',
   };
+
+  const jogador = { // Definimos um objeto 'jogador' com algumas informações.
+    nome: 'João',
+    idade: 25,
+    posicao: 'Atacante',
+    time: 'Time A',
+  };
+
+  const getJogos = async () => {
+    try {
+      const response = await axios.get('https://www.api-football.com/');
+      setJogos(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   // SelecionarHorario irá atualizar o estado 'horarioSelecionado' para o valor do objeto horario.
   const selecionarHorario = () => {
     setHorarioSelecionado(horario);

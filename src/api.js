@@ -1,4 +1,6 @@
 import axios from "axios";
+import HorarioInfo from "./components/HorarioInfo";
+import JogadorInfo from "./components/JogadorInfo";
 
 const API_BASE_URL = "https://www.api.football.com/";
 
