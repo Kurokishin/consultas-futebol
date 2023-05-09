@@ -1,25 +1,32 @@
-# Introdução ao Create React App
+## 🧾 Descrição
 
-No diretório de seu projeto você deve executar o seguinte comando:
-### `npm install react-scripts --save`
+Este projeto é uma aplicação web que utiliza a tecnologia ReactJS e utiliza a API "api-football" para buscas de estatísticas do futebol, como times, jogadores e jogos.
+Trabalho referente a atividade da N2 da disciplina de Desenvolvimento WEB 2
+  
+ ## 🚀 Autores
+  
+- Francisco Luan
 
-Execute esse comando no seu terminal "CMD" para instalar todos os componentes necessarios para utilização dos arquivos React.
-Se o pacote já estiver instalado, verifique se a pasta node_modules/.bin está presente no diretório do projeto. Se estiver ausente, pode ser necessário excluir a pasta node_modules e reinstalar todas as dependências do projeto executando o comando:
-### `rm -rf node_modules`
-### `npm install`
+- Luan Claiver
+  
+- Rafael Pereira
 
-Após garantir que o react-scripts está instalado e a pasta node_modules/.bin está presente, tente executar novamente o comando:
-### `npm run build.`
+## 🔌 Tecnologias utilizadas
 
-O comando:
-### `npm start`
+- **ReactJS:** O ReactJS é uma biblioteca JavaScript que ajuda a criar interfaces de usuário para aplicações web.
+- **API-Football:** A api-football é uma API Restful para dados de futebol. Ela fornece informações sobre futebol como fuso horário, temporadas, países, ligas, times, classificações, jogos e eventos.
 
-Executa o aplicativo em modo de desenvolvimento em uma pagina we, usando a porta 3000 em localhost. A pagina sempre é recarregada ao fazer alterações e salvar o arquivo.
+## 🏳️ Como executar?
 
-Para iniciar em modo de teste no modo de observação interativo basta usar o comando:
-### `npm test`
+### **Passo 1**
+Faça download ou clone o repositório.
 
-Para criar o aplicativo para produção na pasta 'build'.\ basta usar o seguinte comando:
-### `npm run build`
+### **Passo 2**
+Execute o comando ```npm install``` para instalar as dependências do projeto;
 
-Ele funciona de uma maneira otimizada para obter melhor desempenho.
+### **Passo 3**
+Após a instalação das dependências, execute o comando ```npm start```;
+
+### **Passo 4**
+Aguarde o processo de compilação e será aberto no navegador no endereço http://localhost:3000.
+
