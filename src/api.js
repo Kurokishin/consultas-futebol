@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const API_KEY = "46ed8fd6c632def794beadc08888eb54";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const api = axios.create({
   baseURL: 'https://v3.football.api-sports.io/',
   headers: {
     'x-rapidapi-host': 'v3.football.api-sports.io',
-    'x-rapidapi-key': API_KEY,
+    'x-rapidapi-key': apiKey,
     'Content-Type': 'application/json',
   },
 });
