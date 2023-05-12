@@ -18,7 +18,7 @@ form {
 }
 
 /* Estilo para a entrada de texto */
-#searchInput {
+.barraPesquisa {
   padding: 10px;
   font-size: 16px;
   border-radius: 4px;
@@ -28,7 +28,7 @@ form {
 }
 
 /* Estilo para o botão de pesquisa */
-#searchButton {
+.botao {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 4px;
