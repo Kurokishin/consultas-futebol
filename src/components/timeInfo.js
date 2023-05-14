@@ -25,7 +25,12 @@ const GetTeamInfo = ({ searchQuery }) => {
       }
     };
 
-    fetchData();
+    // Recupera dados somente quando um time pesquisado é válido
+    if (searchQuery) {
+        fetchData();
+      } else {
+        setTeams([]);
+      }
   }, [searchQuery]);
 
   const filteredTeams = teams.filter(team =>
