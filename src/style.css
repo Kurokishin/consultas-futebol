@@ -47,6 +47,9 @@ form {
   padding: 20px;
 }
 
+.nomeJogador {
+  color: #0066cc;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

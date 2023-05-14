@@ -33,7 +33,7 @@ const GetPlayerInfo = ({ searchQuery }) => {
       <h1>Lista de jogadores</h1>
       {players.map(player => (
         <div key={player.nome}>
-          <p>Nome: {player.nome}</p>
+          <p className='nomeJogador'>Nome: {player.nome}</p>
           <p>Time: {player.time}</p>
           {player.foto && <img src={player.foto} alt={player.nome} />}
           <p>Posição: {player.posicao}</p>
