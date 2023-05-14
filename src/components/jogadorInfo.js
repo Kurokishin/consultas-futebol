@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const GetPlayerInfo = ({ jogador }) => {
+const GetPlayerInfo = ({ searchQuery }) => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const apiKey = process.env.REACT_APP_API_KEY; // Replace with your actual API key
-      const apiUrl = `https://apiv3.apifootball.com/?action=get_players&player_name=${jogador}&APIkey=${apiKey}`;
+      const apiKey = process.env.REACT_APP_API_KEY;
+      const apiUrl = `https://apiv3.apifootball.com/?action=get_players&player_name=${searchQuery}&APIkey=${apiKey}`;
 
       try {
         const response = await axios.get(apiUrl);
@@ -26,7 +26,7 @@ const GetPlayerInfo = ({ jogador }) => {
     };
 
     fetchData();
-  }, [jogador]);
+  }, [searchQuery]);
 
   return (
     <div>
