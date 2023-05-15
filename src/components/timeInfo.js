@@ -6,7 +6,7 @@ const GetTeamInfo = ({ searchQuery }) => {
   
     useEffect(() => {
       const fetchData = async () => {
-        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiKey = '3e0a856bd02675eba4ca1a26f3c5a98dbc1b1118c44f1dac567623de4af6e24a';
         const apiUrl = `https://apiv3.apifootball.com/?action=get_teams&league_id=302&APIkey=${apiKey}`;
   
         try {
