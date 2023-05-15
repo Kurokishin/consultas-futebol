@@ -8,13 +8,12 @@ body {
   text-align: center; /* Centralizar o texto */
 }
 
-
 /* Estilo para o formulário */
 form {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 200px 0;
 }
 
 /* Estilo para a entrada de texto */
@@ -36,7 +35,17 @@ form {
   background-color: #0066cc;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
+
+.botao:hover {
+  background-color: #0055b3;
+}
+
+.botao:active {
+  background-color: #00224b;
+}
+
 
 /* Estilo para o widget de jogos de futebol */
 #wg-api-football-games {
@@ -51,8 +60,68 @@ form {
   color: #0066cc;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Estilo para a lista de pesquisas */
+.pesquisas {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
-  
+
+.pesquisas li {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.pesquisas li:hover {
+  transform: translateY(-5px);
+}
+
+.pesquisas li:active {
+  transform: translateY(0);
+}
+
+.player-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.player-card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.player-card .nomeJogador {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.player-card p {
+  margin-bottom: 8px;
+}
+
+.player-card img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+
+
+/* Estilo para o conteúdo do jogador ou equipe */
+.conteudo {
+  text-align: left;
+}
