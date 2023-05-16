@@ -30,3 +30,6 @@ Após a instalação das dependências, execute o comando ```npm start```;
 ### **Passo 4**
 Aguarde o processo de compilação e será aberto no navegador no endereço http://localhost:3000.
 
+### **LINK DO VERCEL**
+[CLIQUE AQUI](https://consultas-api-futebol.vercel.app/)
+
